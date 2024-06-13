@@ -1,17 +1,10 @@
-import { Repository } from "../../service/types";
-import { useData } from "../../service/useGitHub";
-import {
-  useRepositoriesSotre,
-  useRepositoriesSotre,
-} from "../../store/useFavoritesStore";
+import { Repository } from "../../../service/types";
+import { useData } from "../../../service/useGitHub";
+import useRepository from "../../../stores/repository";
 
 export default function Repositories() {
   const { data, isLoading } = useData();
-
-  const {
-    state: { repositories },
-    actions: { addRepositorie },
-  } = useRepositoriesSotre();
+  const addRepository = useRepository((state) => state.addRepository);
 
   if (isLoading) {
     return <div>loading...</div>;
@@ -20,7 +13,7 @@ export default function Repositories() {
   return (
     <div className="mt-10 flex flex-col gap-5 mb-10">
       {data?.map((repo: Repository) => (
-        <div key={repo.id} className="text-white border border-slate-500 py-5">
+        <div key={repo.id} className="text-white border border-slate-500 p-5">
           <div className="flex justify-between items-center">
             <div className="flex gap-2 text-blue-500 font-bold">
               {repo.name}
@@ -30,8 +23,14 @@ export default function Repositories() {
             </div>
             <button
               onClick={() => {
-                addToStars(repo);
+                addRepository(repo);
                 console.log("Adicionou ao favoritos:", repo);
+                const currentRepositories =
+                  useRepository.getState().repositories;
+                console.log(
+                  "Estado atual dos favoritos após adicionar:",
+                  currentRepositories
+                );
               }}
               className="text-gray-400 hover:text-yellow-400"
             >

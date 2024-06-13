@@ -1,5 +1,6 @@
 import { Book, Star } from "lucide-react";
-import logoGit from "../assets/github.svg";
+import logoGit from "../../assets/github.svg";
+import { Link } from "react-router-dom";
 
 export function Home() {
   return (
@@ -11,22 +12,22 @@ export function Home() {
       <div>
         <ul className="flex gap-5 mt-5">
           <li>
-            <a
-              href="/repositories"
+            <Link
+              to="/repositories"
               className="text-slate-300 flex gap-2 hover:text-white"
             >
               <Book size={20} />
               Repositories
-            </a>
+            </Link>
           </li>
           <li>
-            <a
-              href="/stars"
+            <Link
+              to="/stars"
               className="text-slate-300 flex gap-2  hover:text-white"
             >
               <Star size={20} />
-              Stars
-            </a>
+              Favorites
+            </Link>
           </li>
         </ul>
       </div>

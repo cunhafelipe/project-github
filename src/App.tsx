@@ -1,24 +1,27 @@
-import { Home } from "./view/home";
-import Repositories from "./view/repositories";
-import Stars from "./view/stars";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
+import Repositories from "./view/components/repositories";
+import Favorites from "./view/components/favorite";
+import { Home } from "./view/components/home";
 
 function App() {
-  let Page = Home;
-  const { pathname } = window.location;
-
-  if (pathname === "/repositories") {
-    Page = Repositories;
-  } else {
-    Page = Stars;
-  }
-
   return (
-    <div>
-      <Home />
-      <div className="max-w-[80%] mx-auto">
-        <Page />
+    <Router>
+      <div>
+        <Home />
+        <div className="max-w-[80%] mx-auto">
+          <Routes>
+            <Route path="/repositories" element={<Repositories />} />
+            <Route path="/stars" element={<Favorites />} />
+            <Route path="*" element={<Navigate to="/repositories" />} />
+          </Routes>
+        </div>
       </div>
-    </div>
+    </Router>
   );
 }
 
