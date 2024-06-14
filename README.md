@@ -1,30 +1,28 @@
-# React + TypeScript + Vite
+# Projeto de Estudo com React, Tailwind e Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Visão Geral
 
-Currently, two official plugins are available:
+Este projeto tem como objetivo servir como um exercício de estudo focado no desenvolvimento web moderno, utilizando tecnologias como React, Tailwind CSS e Vite. Além disso, incorpora boas práticas de consumo de API utilizando React Query e Axios, e segue a arquitetura MVC para organização do código em camadas.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Funcionalidades
 
-## Expanding the ESLint configuration
+- **React + TypeScript**: Utilização do TypeScript para segurança de tipos e React para construção de interfaces de usuário dinâmicas.
+- **Tailwind CSS**: Desenvolvimento rápido de interfaces com classes CSS de utilidade do Tailwind.
+- **Vite**: Build rápido e eficiente com o Vite, um sistema de build moderno.
+- **React Query**: Gerenciamento de estado e cache de dados com o React Query para integração suave com APIs.
+- **Axios**: Comunicação HTTP robusta utilizando Axios para requisições à API.
+- **Arquitetura MVC**: Organização do código em Model, View e Controller para manutenção e escalabilidade.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Configuração
 
-- Configure the top-level `parserOptions` property like this:
+1. **Clone o repositório:**
+   ```bash
+   git clone https://github.com/seunome/seuprojeto.git
+   cd seuprojeto
+2. **Instale as dependências:**
+   ```bash
+   npm install
+   npm run dev
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## Conclusão
+Este repositório é uma iniciativa educacional para demonstrar proficiência nas ferramentas do ecossistema React, na utilização eficaz do Tailwind CSS, e na implementação de uma arquitetura MVC para aplicações web. Para mais informações ou feedback, entre em contato pelo email contato.cunhafelipe@gmail.com
