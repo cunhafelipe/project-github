@@ -17,7 +17,7 @@ Este projeto tem como objetivo servir como um exercício de estudo focado no des
 
 1. **Clone o repositório:**
    ```bash
-   git clone https://github.com/seunome/seuprojeto.git
+   git clone https://github.com/seunome/project-github.git
    cd seuprojeto
 2. **Instale as dependências:**
    ```bash
