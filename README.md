@@ -1,4 +1,4 @@
-# Projeto de Estudo com React, Tailwind e Vite
+# Projeto Github
 
 ## Visão Geral
 
