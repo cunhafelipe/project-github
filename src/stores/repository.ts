@@ -11,6 +11,7 @@ type RepositoryType = {
 type State = {
   repositories: RepositoryType[];
   addRepository: (repository: RepositoryType) => void;
+  removeRepository: (repositoryId: number) => void;
 };
 
 const useRepository = create(
@@ -18,8 +19,21 @@ const useRepository = create(
     (set) => ({
       repositories: [],
       addRepository: (repository: RepositoryType) => {
+        set((state) => {
+          const exists = state.repositories.some(
+            (repo) => repo.id === repository.id
+          );
+          if (!exists) {
+            return { repositories: [...state.repositories, repository] };
+          }
+          return state;
+        });
+      },
+      removeRepository: (repositoryId: number) => {
         set((state) => ({
-          repositories: [...state.repositories, repository],
+          repositories: state.repositories.filter(
+            (repo) => repo.id !== repositoryId
+          ),
         }));
       },
     }),
